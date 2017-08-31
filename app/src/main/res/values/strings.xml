@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">diet</string>
+
+    <!--activity_diet-->
+    <string name="diet_title">菜单</string>
+    <string name="diet_person_num">人数:</string>
+    <string name="diet_soup_num">汤:</string>
+    <string name="diet_meat_num">荤菜:</string>
+    <string name="diet_veg_num">素菜:</string>
+    <string name="diet_submit">确定</string>
+    <string name="diet_result">随机菜单数据:</string>
+    <string name="diet_result_hint">生成的随机菜单数据</string>
+    <string name="diet_no_data">暂时没有选择菜单</string>
+    <!--activity_dish_detail-->
+    <string name="dish_detail_title">详情</string>
+</resources>
