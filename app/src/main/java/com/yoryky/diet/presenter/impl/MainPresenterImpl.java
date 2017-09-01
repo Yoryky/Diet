@@ -9,7 +9,6 @@ import com.yoryky.diet.model.impl.MainModelImpl;
 import com.yoryky.diet.presenter.MainPresenter;
 import com.yoryky.diet.presenter.listener.OnPutUserListener;
 import com.yoryky.diet.presenter.listener.OnUserListener;
-import com.yoryky.diet.ui.activity.DishActivity;
 import com.yoryky.diet.ui.activity.MainActivity;
 import com.yoryky.diet.ui.view.MainView;
 
@@ -40,15 +39,7 @@ public class MainPresenterImpl implements MainPresenter, OnUserListener,OnPutUse
     public void putUser() {
         User user = new User();
         user.setId(UUID.randomUUID().toString());
-        user.setName(mainView.getName());
-        user.setEmail(mainView.getEmail());
         userModel.putUser(user,this);
-    }
-
-    @Override
-    public void startDishActivity() {
-        Intent intent = new Intent((MainActivity)mainView,DishActivity.class);
-        ((MainActivity) mainView).startActivity(intent);
     }
 
     @Override

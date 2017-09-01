@@ -7,5 +7,4 @@ package com.yoryky.diet.presenter;
 public interface DishPresenter {
     public void getRandomDish();
 
-    public void back();
 }

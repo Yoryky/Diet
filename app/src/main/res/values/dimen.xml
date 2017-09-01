@@ -12,4 +12,13 @@
     <dimen name="margin_5">5dp</dimen>
     <dimen name="margin_10">10dp</dimen>
     <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_35">35dp</dimen>
+    <dimen name="height_20">20dp</dimen>
+    <dimen name="height_40">40dp</dimen>
+    <dimen name="height_10">10dp</dimen>
+    <dimen name="width_20">20dp</dimen>
+    <dimen name="width_10">10dp</dimen>
+    <dimen name="image_width_20">20dp</dimen>
+    <dimen name="image_height_20">20dp</dimen>
+    <dimen name="divider_05">0.5dp</dimen>
 </resources>

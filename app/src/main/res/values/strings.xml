@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">diet</string>
 
-    <!--activity_diet-->
+    <!--fragment_dish-->
     <string name="diet_title">菜单</string>
     <string name="diet_person_num">人数:</string>
     <string name="diet_soup_num">汤:</string>
@@ -13,4 +13,33 @@
     <string name="diet_no_data">暂时没有选择菜单</string>
     <!--activity_dish_detail-->
     <string name="dish_detail_title">详情</string>
+
+    <!--fragment_home-->
+    <string name="home_title">首页</string>
+
+    <!--fragment_me-->
+    <string name="me_title">我</string>
+    <string name="me_edit_info">我的资料</string>
+    <string name="me_edit_dish">编辑菜单</string>
+    <string name="me_setting">设置</string>
+
+    <!--activity_setting-->
+    <string name="setting_title">设置</string>
+    <string name="setting_login">登录</string>
+    <string name="setting_exit">退出</string>
+
+    <!--activity_login-->
+    <string name="login_title">账号登录</string>
+    <string name="login_login">登录</string>
+    <string name="login_register">注册</string>
+    <string name="login_find_password">找回密码</string>
+    <string name="login_name_hint">请输入用户名</string>
+    <string name="login_pwd_hint">请输入密码</string>
+
+    <!--activity_register-->
+    <string name="register_title">注册</string>
+    <string name="register_name_hint">请输入用户名</string>
+    <string name="register_pwd_hint">请输入密码</string>
+    <string name="register_pwd_confirm_hint">请再次输入密码</string>
+    <string name="register_register">注册</string>
 </resources>

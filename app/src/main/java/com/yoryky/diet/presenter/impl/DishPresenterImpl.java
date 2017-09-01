@@ -9,7 +9,6 @@ import com.yoryky.diet.model.DishModel;
 import com.yoryky.diet.model.impl.DishModelImpl;
 import com.yoryky.diet.presenter.DishPresenter;
 import com.yoryky.diet.presenter.listener.OnCustomListener;
-import com.yoryky.diet.ui.activity.DishActivity;
 import com.yoryky.diet.ui.activity.DishDetailActivity;
 import com.yoryky.diet.ui.view.DishView;
 import com.yoryky.diet.util.HelpUtil;
@@ -29,7 +28,7 @@ public class DishPresenterImpl implements DishPresenter, OnCustomListener,DishAd
     public DishPresenterImpl(DishView dishView) {
         this.dishView = dishView;
         this.dishModel = new DishModelImpl();
-        this.dishAdapter = new DishAdapter((DishActivity) dishView);
+        this.dishAdapter = new DishAdapter(dishView.getContext());
         this.dishAdapter.setOnItemClickListener(this);
         this.dishView.setAdater(dishAdapter);
     }
@@ -40,11 +39,6 @@ public class DishPresenterImpl implements DishPresenter, OnCustomListener,DishAd
             dishView.setNoDataVisible(false);
             this.dishModel.getRandomDish(dishView.getMeatNum(), dishView.getVegNum(), dishView.getSoupNum(), this);
         }
-    }
-
-    @Override
-    public void back() {
-        dishView.back();
     }
 
     @Override

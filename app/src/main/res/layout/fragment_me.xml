@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/ll_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@color/decorate_blue">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/me_title"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/quiz_bottom"
+        android:scrollbarStyle="outsideOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/decorate_blue"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/padding_10"
+                android:paddingLeft="@dimen/padding_5"
+                android:paddingRight="@dimen/padding_5">
+
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@mipmap/header_bottom">
+
+                    <ImageView
+                        android:id="@+id/civ_header"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/default_header" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:layout_marginTop="18dp"
+                        android:text="小草的胖冬瓜"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/quiz_bottom" />
+
+            <LinearLayout
+                android:id="@+id/ll_edit_info"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_40"
+                android:background="@drawable/item_selector"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/padding_5"
+                android:paddingRight="@dimen/padding_5">
+
+                <ImageView
+                    android:layout_width="@dimen/image_width_20"
+                    android:layout_height="@dimen/image_height_20"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/edit_info" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_weight="1"
+                    android:text="@string/me_edit_info"
+                    android:textColor="@color/black" />
+
+                <ImageView
+                    android:layout_width="@dimen/image_width_20"
+                    android:layout_height="@dimen/image_height_20"
+                    android:src="@mipmap/go_to" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_05"
+                android:layout_marginLeft="@dimen/margin_35"
+                android:background="@color/major_gray" />
+
+            <LinearLayout
+                android:id="@+id/ll_edit_dish"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_40"
+                android:background="@drawable/item_selector"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/padding_5"
+                android:paddingRight="@dimen/padding_5">
+
+                <ImageView
+                    android:layout_width="@dimen/image_width_20"
+                    android:layout_height="@dimen/image_height_20"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/edit_dish" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_weight="1"
+                    android:text="@string/me_edit_dish"
+                    android:textColor="@color/black" />
+
+                <ImageView
+                    android:layout_width="@dimen/image_width_20"
+                    android:layout_height="@dimen/image_height_20"
+                    android:src="@mipmap/go_to" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/quiz_bottom" />
+
+            <LinearLayout
+                android:id="@+id/ll_setting"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_40"
+                android:background="@drawable/item_selector"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/padding_5"
+                android:paddingRight="@dimen/padding_5">
+
+                <ImageView
+                    android:layout_width="@dimen/image_width_20"
+                    android:layout_height="@dimen/image_height_20"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/setting" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_weight="1"
+                    android:text="@string/me_setting"
+                    android:textColor="@color/black" />
+
+                <ImageView
+                    android:layout_width="@dimen/image_width_20"
+                    android:layout_height="@dimen/image_height_20"
+                    android:src="@mipmap/go_to" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

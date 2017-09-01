@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/quiz_bottom"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/re_head"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/decorate_blue">
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_back_button"
+            android:clickable="true"
+            android:padding="5dp"
+            android:visibility="visible">
+
+            <ImageButton
+                android:layout_width="@dimen/left_arrow"
+                android:layout_height="@dimen/left_arrow"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:clickable="false"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/go_back" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/setting_title"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/quiz_bottom" />
+
+    <LinearLayout
+        android:id="@+id/ll_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_40"
+        android:background="@drawable/item_selector"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/padding_5"
+        android:paddingRight="@dimen/padding_5">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_weight="1"
+            android:text="@string/setting_login"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:layout_width="@dimen/image_width_20"
+            android:layout_height="@dimen/image_height_20"
+            android:src="@mipmap/go_to" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_05"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:background="@color/major_gray" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_exit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_40"
+        android:background="@drawable/item_selector"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/padding_5"
+        android:paddingRight="@dimen/padding_5">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_weight="1"
+            android:text="@string/setting_exit"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:layout_width="@dimen/image_width_20"
+            android:layout_height="@dimen/image_height_20"
+            android:src="@mipmap/go_to" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

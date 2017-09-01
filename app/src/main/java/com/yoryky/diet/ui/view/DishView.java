@@ -20,8 +20,6 @@ public interface DishView {
 
     public void setAdater(DishAdapter dishAdapter);
 
-    public void back();
-
     public Context getContext();
 
     public void setNoDataVisible(boolean visible);

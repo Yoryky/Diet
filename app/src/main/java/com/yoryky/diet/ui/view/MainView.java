@@ -5,6 +5,5 @@ package com.yoryky.diet.ui.view;
  */
 
 public interface MainView {
-    public String getName();
-    public String getEmail();
+
 }
