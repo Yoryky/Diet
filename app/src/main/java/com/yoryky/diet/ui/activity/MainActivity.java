@@ -49,7 +49,6 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         this.initViews();
-
     }
 
     private void initViews() {
@@ -67,6 +66,8 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
         dishLayout.setOnClickListener(this);
         meLayout.setOnClickListener(this);
         setTabSelection(0);
+        mainPresenter = new MainPresenterImpl(this);
+        mainPresenter.autoLogin();
     }
 
     @Override
@@ -150,4 +151,8 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
         }
     }
 
+    @Override
+    public Context getContext() {
+        return this;
+    }
 }

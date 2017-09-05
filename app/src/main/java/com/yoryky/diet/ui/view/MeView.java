@@ -3,9 +3,12 @@ package com.yoryky.diet.ui.view;
 import android.content.Context;
 
 /**
- * Created by yoryky on 2017/8/28.
+ * Created by caicai on 2017/9/3.
  */
 
-public interface MainView {
+public interface MeView {
+
     Context getContext();
+
+    void setUserName(String name);
 }

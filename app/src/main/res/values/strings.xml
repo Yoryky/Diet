@@ -20,7 +20,7 @@
     <!--fragment_me-->
     <string name="me_title">我</string>
     <string name="me_edit_info">我的资料</string>
-    <string name="me_edit_dish">编辑菜单</string>
+    <string name="me_dish">菜单</string>
     <string name="me_setting">设置</string>
 
     <!--activity_setting-->
@@ -42,4 +42,12 @@
     <string name="register_pwd_hint">请输入密码</string>
     <string name="register_pwd_confirm_hint">请再次输入密码</string>
     <string name="register_register">注册</string>
+
+    activity_mydishlist-->
+    <string name="dishlist_title">我的菜单</string>
+
+    <!--activity_serverdish-->
+    <string name="serverdish_title">系统菜单</string>
+    <string name="serverdish_search_hint">输入菜单名</string>
+    <string name="serverdish_search">搜索</string>
 </resources>

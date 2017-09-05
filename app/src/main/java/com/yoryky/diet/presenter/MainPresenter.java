@@ -10,4 +10,5 @@ import com.yoryky.diet.presenter.listener.OnUserListener;
 public interface MainPresenter {
     public void getUser(String user_id);
     public void putUser();
+    void autoLogin();
 }

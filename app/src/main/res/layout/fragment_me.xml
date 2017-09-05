@@ -121,7 +121,7 @@
                 android:background="@color/major_gray" />
 
             <LinearLayout
-                android:id="@+id/ll_edit_dish"
+                android:id="@+id/ll_dish"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_40"
                 android:background="@drawable/item_selector"
@@ -143,7 +143,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="@dimen/margin_10"
                     android:layout_weight="1"
-                    android:text="@string/me_edit_dish"
+                    android:text="@string/me_dish"
                     android:textColor="@color/black" />
 
                 <ImageView
