@@ -32,6 +32,7 @@ public class DishPresenterImpl implements DishPresenter, OnCustomListener, DishA
         this.dishModel = new DishModelImpl();
         this.dishAdapter = new DishAdapter(dishView.getContext());
         this.dishAdapter.setShowAddButton(false);
+        this.dishAdapter.setSplitPage(false);
         this.dishAdapter.setOnItemClickListener(this);
         this.dishView.setAdater(dishAdapter);
     }

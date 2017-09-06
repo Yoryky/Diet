@@ -19,10 +19,12 @@ import java.util.HashMap;
 
 public class ServerDishModelImpl implements ServerDishModel {
     @Override
-    public void getSearchData(String searchName, final OnCustomListener listener) {
+    public void getSearchData(String searchName,int pageIndex,int pageSize, final OnCustomListener listener) {
         HashMap<String,String> hashMap = new HashMap<>();
         hashMap.put("command","all");
         hashMap.put("search_name",searchName);
+        hashMap.put("page_index",String.valueOf(pageIndex));
+        hashMap.put("page_size",String.valueOf(pageSize));
         VolleyRequest.newInstance().postGsonRequest(MyApplication.getContext().getDishUrl(), hashMap, JSONObject.class,
                 new Response.Listener<JSONObject>() {
                     @Override

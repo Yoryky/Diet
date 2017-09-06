@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -21,12 +22,14 @@ import com.yoryky.diet.ui.view.ServerDishView;
  * Created by yoryky on 2017/9/4.
  */
 
-public class ServerDishActivity extends BaseActivity implements ServerDishView,View.OnClickListener {
+public class ServerDishActivity extends BaseActivity implements ServerDishView,View.OnClickListener{
     private RelativeLayout rlBack;
     private EditText etDishName;
     private Button btnSearch;
     private RecyclerView rvServerDish;
     private ServerDishPresenter serverDishPresenter;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,7 @@ public class ServerDishActivity extends BaseActivity implements ServerDishView,V
         btnSearch.setOnClickListener(this);
         rlBack.setOnClickListener(this);
     }
+
 
     @Override
     public void onClick(View v) {
@@ -68,13 +72,18 @@ public class ServerDishActivity extends BaseActivity implements ServerDishView,V
     }
 
     @Override
-    public void setAdapter(DishAdapter dishAdapter) {
-        rvServerDish.setLayoutManager(new LinearLayoutManager(getContext()));
+    public void setAdapter(DishAdapter dishAdapter,LinearLayoutManager manager) {
+        rvServerDish.setLayoutManager(manager);
         rvServerDish.setAdapter(dishAdapter);
     }
 
     @Override
     public String getSearchName() {
         return etDishName.getText().toString();
+    }
+
+    @Override
+    public void setOnScrollListener(RecyclerView.OnScrollListener listener) {
+        rvServerDish.setOnScrollListener(listener);
     }
 }

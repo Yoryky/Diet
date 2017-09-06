@@ -9,6 +9,6 @@ import com.yoryky.diet.presenter.listener.OnCustomListener;
  */
 
 public interface ServerDishModel {
-    void getSearchData(String searchName, OnCustomListener listener);
+    void getSearchData(String searchName,int pageIndex,int pageSize, OnCustomListener listener);
     void addUserDishData(Dish dish, OnAddUserDishListener listener);
 }

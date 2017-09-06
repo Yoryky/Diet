@@ -27,6 +27,7 @@ public class MyDishPresenterImpl implements MyDishPresenter,OnCustomListener,Dis
         this.dishListView = dishListView;
         this.dishListModel = new MyDishModelImpl();
         this.dishAdapter = new DishAdapter(dishListView.getContext());
+        this.dishAdapter.setSplitPage(false);
         this.dishAdapter.setOnItemClickListener(this);
         this.dishListView.setAdaprer(dishAdapter);
         this.getData();

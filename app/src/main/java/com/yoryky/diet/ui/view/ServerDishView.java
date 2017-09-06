@@ -1,6 +1,8 @@
 package com.yoryky.diet.ui.view;
 
 import android.content.Context;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import com.yoryky.diet.adapter.DishAdapter;
 
@@ -11,6 +13,7 @@ import com.yoryky.diet.adapter.DishAdapter;
 public interface ServerDishView {
     Context getContext();
     void back();
-    void setAdapter(DishAdapter dishAdapter);
+    void setAdapter(DishAdapter dishAdapter,LinearLayoutManager manager);
     String getSearchName();
+    void setOnScrollListener(RecyclerView.OnScrollListener listener);
 }
