@@ -39,6 +39,7 @@ public class ServerDishPresenterImpl implements ServerDishPresenter, OnCustomLis
         linearLayoutManager = new LinearLayoutManager(serverDishView.getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         this.serverDishView.setAdapter(dishAdapter, linearLayoutManager);
+        this.serverDishView.setOnRefresh();
         this.serverDishView.setOnScrollListener(new ServerDishOnScrollListener());
         this.getDishData();
     }
@@ -65,9 +66,17 @@ public class ServerDishPresenterImpl implements ServerDishPresenter, OnCustomLis
         serverDishModel.getSearchData(serverDishView.getSearchName(),pageIndex, pageSize, this);
     }
 
+    @Override
+    public void onRefresh() {
+        dishAdapter.setRefresh(true);
+        getDishData();
+    }
 
     @Override
     public void onSuccess(JSONObject result) {
+        if(dishAdapter.isRefresh()){
+            stopRefresh();
+        }
         dishAdapter.getData(result);
     }
 
@@ -111,4 +120,8 @@ public class ServerDishPresenterImpl implements ServerDishPresenter, OnCustomLis
         }
     }
 
+    @Override
+    public void stopRefresh() {
+        serverDishView.stopRefresh();
+    }
 }

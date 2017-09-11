@@ -7,4 +7,6 @@ package com.yoryky.diet.presenter;
 public interface ServerDishPresenter {
     void back();
     void getDishData();
+    void onRefresh();
+    void stopRefresh();
 }

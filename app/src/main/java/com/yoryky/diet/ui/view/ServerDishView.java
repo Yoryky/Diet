@@ -16,4 +16,6 @@ public interface ServerDishView {
     void setAdapter(DishAdapter dishAdapter,LinearLayoutManager manager);
     String getSearchName();
     void setOnScrollListener(RecyclerView.OnScrollListener listener);
+    void setOnRefresh();
+    void stopRefresh();
 }

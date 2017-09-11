@@ -3,6 +3,7 @@ package com.yoryky.diet.ui.activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -22,13 +23,13 @@ import com.yoryky.diet.ui.view.ServerDishView;
  * Created by yoryky on 2017/9/4.
  */
 
-public class ServerDishActivity extends BaseActivity implements ServerDishView,View.OnClickListener{
+public class ServerDishActivity extends BaseActivity implements ServerDishView,View.OnClickListener,SwipeRefreshLayout.OnRefreshListener{
     private RelativeLayout rlBack;
     private EditText etDishName;
     private Button btnSearch;
     private RecyclerView rvServerDish;
+    private SwipeRefreshLayout srlServerDish;
     private ServerDishPresenter serverDishPresenter;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,6 +43,7 @@ public class ServerDishActivity extends BaseActivity implements ServerDishView,V
         etDishName = (EditText)findViewById(R.id.et_dish_name);
         btnSearch = (Button)findViewById(R.id.btn_search);
         rvServerDish = (RecyclerView)findViewById(R.id.rv_server_dish);
+        srlServerDish = (SwipeRefreshLayout)findViewById(R.id.srl_dish);
         serverDishPresenter = new ServerDishPresenterImpl(this);
         btnSearch.setOnClickListener(this);
         rlBack.setOnClickListener(this);
@@ -58,6 +60,11 @@ public class ServerDishActivity extends BaseActivity implements ServerDishView,V
                 serverDishPresenter.getDishData();
                 break;
         }
+    }
+
+    @Override
+    public void onRefresh() {
+        serverDishPresenter.onRefresh();
     }
 
     @Override
@@ -85,5 +92,15 @@ public class ServerDishActivity extends BaseActivity implements ServerDishView,V
     @Override
     public void setOnScrollListener(RecyclerView.OnScrollListener listener) {
         rvServerDish.setOnScrollListener(listener);
+    }
+
+    @Override
+    public void setOnRefresh() {
+        srlServerDish.setOnRefreshListener(this);
+    }
+
+    @Override
+    public void stopRefresh() {
+        srlServerDish.setRefreshing(false);
     }
 }

@@ -94,10 +94,17 @@
             android:textSize="@dimen/text_size_14" />
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_server_dish"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srl_dish"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/margin_5" />
+        android:scrollbars="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_server_dish"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_5" />
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>

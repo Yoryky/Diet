@@ -24,11 +24,12 @@ public class DishAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private MyItemClickListener mItemClickListener;
     private boolean showAddButton = false;
     private boolean splitPage = false;//是否分页
-    private boolean noMoreData = false;
-    private int load_more_status = 0;
+    private boolean noMoreData = false;//是否有更多数据
+    private boolean isRefresh = false;
+    private int loadMoreStatus = 0;//0 提示上拉加载 1 正在上拉加载 2 无更多数据 3 隐藏上拉提示
     private static final int TYPE_ITEM = 0;//普通item view
     private static final int TYPE_FOOTER=1;//底部foot view
-    public static final int PULLUP_LOAD_MORE = 0;
+    public static final int PULL_UP_LOAD_MORE = 0;
     public static final int LOADING_MORE = 1;
     public static final int LOAD_END = 2;
     public static final int LOAD_GONE = 3;//不可见
@@ -67,8 +68,8 @@ public class DishAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             holder.itemView.setTag(position);//没添加这句时ServerDishOnScrollListener没触发
         }else if(holder instanceof FootViewHolder){
             FootViewHolder footViewHolder = (FootViewHolder)holder;
-            switch (load_more_status){
-                case PULLUP_LOAD_MORE:
+            switch (loadMoreStatus){
+                case PULL_UP_LOAD_MORE:
                     footViewHolder.tvFootMind.setText("上拉加载更多...");
                     break;
                 case LOADING_MORE:
@@ -108,6 +109,12 @@ public class DishAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             mDishes.clear();
             changeMoreStatus(DishAdapter.LOAD_GONE);
         }
+        if(isRefresh){
+            mDishes.clear();
+            isRefresh = false;
+            pageIndex = 1;
+            noMoreData = false;
+        }
         if(jsonObject.getIntValue("code") == 0){
             JSONArray dishArray = jsonObject.getJSONArray("data");
             for (int i = 0; i < dishArray.size(); i++) {
@@ -123,7 +130,7 @@ public class DishAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     noMoreData = true;
                 }else{
                     ++pageIndex;
-                    changeMoreStatus(DishAdapter.PULLUP_LOAD_MORE);
+                    changeMoreStatus(DishAdapter.PULL_UP_LOAD_MORE);
                 }
             }
         }else{
@@ -161,8 +168,17 @@ public class DishAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return pageSize;
     }
 
+    public void setRefresh(boolean refresh){
+        isRefresh = refresh;
+        pageIndex = 1;
+    }
+
+    public boolean isRefresh() {
+        return isRefresh;
+    }
+
     public void changeMoreStatus(int status){
-        load_more_status = status;
+        loadMoreStatus = status;
         notifyDataSetChanged();
     }
 

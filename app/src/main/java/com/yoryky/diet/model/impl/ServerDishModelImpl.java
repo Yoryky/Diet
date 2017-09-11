@@ -3,7 +3,6 @@ package com.yoryky.diet.model.impl;
 import com.alibaba.fastjson.JSONObject;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.Volley;
 import com.yoryky.diet.app.MyApplication;
 import com.yoryky.diet.model.ServerDishModel;
 import com.yoryky.diet.model.entity.Dish;
